@@ -76,7 +76,7 @@ function calculation(calculate) {
 function information(msg, answer) {
     setTimeout(() => {
         answer(msg);
-    }, 1000)
+    }, 10000)
 }
 information("DATA OF STUDENT: ", studentinfo)
 function studentinfo(info) {
@@ -86,3 +86,41 @@ function studentinfo(info) {
     p.innerHTML = info + " Name of student is " + name + " and her age is " + age;
     document.body.appendChild(p)
 }
+
+// change heading
+
+function callbackheading(msg, head) {
+    setTimeout(() => {
+        head(msg);
+    }, 2000)
+}
+callbackheading("this is heading", heading)
+
+let h2 = document.createElement("h2")
+h2.innerHTML = "heading";
+h2.style.color = "red"
+
+function heading(h) {
+    h2.innerHTML = h;
+    h2.style.color = "pink"
+    h2.style.fontStyle = "italic"
+}
+document.body.appendChild(h2)
+
+// change paragraph
+
+function paracallback(msg, para1) {
+    setTimeout(() => {
+        para1(msg)
+    }, 6000)
+}
+paracallback("12345678910", para)
+
+let p = document.createElement("p")
+p.innerHTML = "abcdefghijklmnopqrstuvwxyz"
+
+function para(paragraph) {
+    p.innerHTML = paragraph;
+    p.style.color = "orange"
+}
+document.body.appendChild(p)
