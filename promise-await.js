@@ -134,3 +134,25 @@ even_odd.then(
         document.getElementById("even_odd").innerHTML = err
     }
 )
+
+// subtraction of two numbers
+
+let check_no_ = new Promise((resolve, reject) => {
+    let num1 = 40;
+    let num2 = 2;
+    let result = num1 - num2;
+    if (result < 20) {
+        resolve("result is too small")
+    } else {
+        reject("result is greater ")
+    }
+})
+check_no_.then(
+    msg => {
+        document.getElementById("check_no_").innerHTML = msg
+    },
+    err => {
+        document.getElementById("check_no_").innerHTML = err
+    }
+)
+
