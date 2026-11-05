@@ -39,7 +39,7 @@ promisee.then(
 )
 // check name
 let promise_munazza = new Promise((resolve, reject) => {
-    let condition = true;
+    let condition = false;
     if (condition) {
         resolve("Welcome Munazza")
     } else {
@@ -156,3 +156,126 @@ check_no_.then(
     }
 )
 
+// booking ticket
+
+function ticket(name, age) {
+    return new Promise((accepted, rejected) => {
+        if (age >= 18) {
+            accepted("you are eligible")
+        }
+        else {
+            rejected("you are not eligible")
+        }
+    })
+}
+ticket("munazza", 20).then(
+    rider => {
+        document.getElementById("rider").innerHTML = rider;
+    },
+    noteligible => {
+        document.getElementById("rider").innerHTML = noteligible;
+    }
+)
+// nested promise chainging
+function fname(name) {
+    return Promise.resolve(name)
+}
+
+function age(value) {
+    return Promise.resolve(value + ' is 30 years old')
+}
+
+function status(state) {
+    return Promise.resolve(state + ' and you are a Web Developer')
+}
+
+fname('hiba')
+    .then(name => {
+        return age(name)
+    })
+    .then(age => {
+        return status(age)
+    })
+    .then(status => {
+        document.getElementById('displayChainingPromise').innerHTML = status
+    })
+    .catch(error => {
+        console.log(error)
+    })
+
+//  student
+
+function student(name_) {
+    return Promise.resolve(name_)
+}
+
+function class_(classes) {
+    return Promise.resolve(classes + " is in bscs ")
+}
+
+function teachername(teacher) {
+    return Promise.resolve(teacher + " her teacher name is hiba ")
+}
+
+student("munazza")
+    .then(name_ => {
+        return class_(name_)
+    })
+    .then(class_ => {
+        return teachername(class_)
+    })
+    .then(teachername => {
+        document.getElementById("student").innerHTML = teachername;
+    })
+    .catch(error => {
+        console.log(error)
+    })
+
+// school
+
+function studentname(name) {
+    return Promise.resolve(name)
+}
+function studentage(age) {
+    return Promise.resolve(age + " is 20 year old ")
+}
+function city(city_) {
+    return Promise.resolve(city_ + " she lives in karachi")
+}
+studentname("Munazza")
+    .then(name => {
+        return studentage(name)
+    })
+    .then(studentage => {
+        return city(studentage)
+    })
+    .then(city => {
+        document.getElementById("info").innerHTML = city;
+    })
+    .catch(error => {
+        console.error();
+    }
+    )
+
+function food(name) {
+    return Promise.resolve(name)
+}
+function price(prices) {
+    return Promise.resolve(prices + " cost is PKR 300 per plate")
+}
+function restaurant(hotel) {
+    return Promise.resolve(hotel + " at farhan biryani")
+}
+food("biryani")
+    .then(name => {
+        return price(name)
+    })
+    .then(price => {
+        return restaurant(price)
+    })
+    .then(restaurant => {
+        document.getElementById("food").innerHTML = restaurant
+    })
+    .catch(error => {
+        console.log(error);
+    })
