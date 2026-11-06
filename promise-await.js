@@ -279,3 +279,110 @@ food("biryani")
     .catch(error => {
         console.log(error);
     })
+
+function add(a, b) {
+    return Promise.resolve(a + b);
+}
+function multiply(value) {
+    return Promise.resolve(value * 2)
+}
+function divide(value) {
+    return Promise.resolve(value / 5)
+}
+add(5, 10)
+    .then(sum => {
+        return multiply(sum)
+    })
+    .then(product => {
+        return divide(product)
+    })
+    .then(result => {
+        document.getElementById("result").innerHTML = result
+    })
+    .catch(error => {
+        console.log(error)
+    })
+
+function calculateProfit(cost, sell) {
+    return new Promise((resolve, reject) => {
+        if (typeof cost === 'number' && typeof sell === 'number') {
+            const profit = sell - cost
+            let value =
+                profit > 0 ? 'Profit is: ' + profit : 'Loss is: ' + Math.abs(profit)
+            resolve(value)
+        } else {
+            reject('Error: Both cost and sell should be numbers.')
+        }
+    })
+}
+calculateProfit(500, 1000).then(
+    profit => {
+        document.getElementById('displayProfit').innerHTML = profit
+    },
+    error => {
+        document.getElementById('displayProfit').innerHTML = error
+    }
+)
+// comments
+const fetching = fetch('https://jsonplaceholder.typicode.com/comments')
+fetching
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+    })
+
+// fetch('https://jsonplaceholder.typicode.com/comments')
+// .then(res => {
+//     console.log("Response received!");
+//     return res.json();
+// })
+// .then(data => {
+//     console.log("Data received:", data);
+// })
+// .catch(error => {
+//     console.log("Error:", error);
+// });
+
+// photos
+const fetch_ = fetch('https://jsonplaceholder.typicode.com/photos')
+fetch_
+    .then(response =>
+        response.json())
+
+    .then(data => {
+        console.log(data)
+    })
+
+// users
+fetch('https://jsonplaceholder.typicode.com/users')
+    .then(res => {
+        console.log("response recieved")
+        return res.json();
+    })
+    .then(data => {
+        console.log("data received", data)
+    })
+    .catch(error => {
+        console.log(error)
+    })
+
+// todos
+const fetch__ = fetch('https://jsonplaceholder.typicode.com/todos')
+fetch__
+    .then(todores => {
+        return todores.json();
+    })
+    .then(data => {
+        console.log(data)
+    })
+
+// recipes
+const recipe = fetch('https://dummyjson.com/recipes')
+recipe
+    .then(res => {
+        return res.json();
+    })
+    .then(data => {
+        console.log(data);
+
+    })
