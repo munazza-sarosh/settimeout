@@ -324,59 +324,47 @@ calculateProfit(500, 1000).then(
     }
 )
 // comments
-const fetching = fetch('https://jsonplaceholder.typicode.com/comments')
-fetching
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-    })
-
-// fetch('https://jsonplaceholder.typicode.com/comments')
-// .then(res => {
-//     console.log("Response received!");
-//     return res.json();
-// })
-// .then(data => {
-//     console.log("Data received:", data);
-// })
-// .catch(error => {
-//     console.log("Error:", error);
-// });
+// const fetching = fetch('https://jsonplaceholder.typicode.com/comments')
+// fetching
+//     .then(res => res.json())
+//     .then(data => {
+//         console.log(data)
+//     })
 
 // photos
-const fetch_ = fetch('https://jsonplaceholder.typicode.com/photos')
-fetch_
-    .then(response =>
-        response.json())
+// const fetch_ = fetch('https://jsonplaceholder.typicode.com/photos')
+// fetch_
+//     .then(response =>
+//         response.json())
 
-    .then(data => {
-        console.log(data)
-    })
+//     .then(data => {
+//         console.log(data)
+//     })
 
-// users
-fetch('https://jsonplaceholder.typicode.com/users')
-    .then(res => {
-        console.log("response recieved")
-        return res.json();
-    })
-    .then(data => {
-        console.log("data received", data)
-    })
-    .catch(error => {
-        console.log(error)
-    })
+// // users
+// fetch('https://jsonplaceholder.typicode.com/users')
+//     .then(res => {
+//         console.log("response recieved")
+//         return res.json();
+//     })
+//     .then(data => {
+//         console.log("data received", data)
+//     })
+//     .catch(error => {
+//         console.log(error)
+//     })
 
-// todos
-const fetch__ = fetch('https://jsonplaceholder.typicode.com/todos')
-fetch__
-    .then(todores => {
-        return todores.json();
-    })
-    .then(data => {
-        console.log(data)
-    })
+// // todos
+// const fetch__ = fetch('https://jsonplaceholder.typicode.com/todos')
+// fetch__
+//     .then(todores => {
+//         return todores.json();
+//     })
+//     .then(data => {
+//         console.log(data)
+//     })
 
-// recipes
+// // recipes
 const recipe = fetch('https://dummyjson.com/recipes')
 recipe
     .then(res => {
@@ -384,5 +372,4 @@ recipe
     })
     .then(data => {
         console.log(data);
-
     })
