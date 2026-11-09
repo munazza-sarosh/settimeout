@@ -1,6 +1,6 @@
 // console.log('Hello, World!')
-async function fetchData () {
-  const mypromis = new Promise((resolve, reject) => {})
+async function fetchData() {
+    const mypromis = new Promise((resolve, reject) => { })
 }
 //start one
 // function displayfunction (text) {
@@ -19,35 +19,40 @@ async function fetchData () {
 //end one
 
 //start two
-async function fetchData () {
-  let variable = await fetch('my.json')
-  let jsonfile = await variable.json()
-  return jsonfile
-}
-fetchData()
-function displayjsondata (data) {
-  let table = document.createElement('table')
-  let thead = document.createElement('thead')
-  let tbody = document.createElement('tbody')
-  let trhead = document.createElement('tr')
-  data.forEach(element => {
-    let th = document.createElement('th')
-    th.innerHTML = element.name
-    trhead.appendChild(th)
-  })
-  thead.appendChild(trhead)
-  table.appendChild(thead)
-  data.forEach(element => {
-    let trbody = document.createElement('tr')
-    let td = document.createElement('td')
-    td.innerHTML = element.email
-    trbody.appendChild(td)
-    tbody.appendChild(trbody)
-  })
-  table.appendChild(tbody)
-  document.getElementById('display').appendChild(table)
+async function fetchData() {
+    let variable = await fetch('my.json')
+    let jsonfile = await variable.json()
+    return jsonfile
 }
 
+function displayjsondata(data) {
+    let table = document.createElement('table')
+    let thead = document.createElement('thead')
+    let tbody = document.createElement('tbody')
+    let trhead = document.createElement('tr')
+    data.forEach(element => {
+        let th = document.createElement('th')
+        th.innerHTML = element.name
+        trhead.appendChild(th)
+    })
+    thead.appendChild(trhead)
+    table.appendChild(thead)
+    data.forEach(element => {
+        let trbody = document.createElement('tr')
+        let td = document.createElement('td')
+        td.innerHTML = element.email
+        trbody.appendChild(td)
+        tbody.appendChild(trbody)
+    })
+    table.appendChild(tbody)
+    document.getElementById('display').appendChild(table)
+}
+fetchData().then(data => {
+    displayjsondata(data)
+})
+ .catch(error => {
+        console.log('Error:', error)
+    })
 // let fetchurl = fetch('https://jsonplaceholder.typicode.com/comments')
 // fetchurl
 //   .then(response => {
@@ -56,3 +61,38 @@ function displayjsondata (data) {
 //   .then(data => {
 //     console.log(data)
 //   })
+
+async function fetchData() {
+    let variable = await fetch('my.json')
+    let jsonfile = await variable.json()
+    return jsonfile
+}
+
+function displaydata(data) {
+    let table = document.createElement('table')
+    let thead = document.createElement('thead')
+    let tbody = document.createElement('tbody')
+    let trhead = document.createElement('tr')
+    data.forEach(element => {
+        let th = document.createElement('th')
+        th.innerHTML = element.name
+        trhead.appendChild(th)
+    })
+    thead.appendChild(trhead)
+    table.appendChild(thead)
+    data.forEach(element => {
+        let trbody = document.createElement('tr')
+        let td = document.createElement('td')
+        td.innerHTML = element.email
+        trbody.appendChild(td)
+        tbody.appendChild(trbody)
+    })
+    table.appendChild(tbody)
+    document.getElementById('display').appendChild(table)
+}
+fetchData().then(data => {
+    displaydata(data)
+})
+ .catch(error => {
+        console.log('Error:', error)
+    })
