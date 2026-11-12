@@ -3,9 +3,7 @@ async function fetch_(other) {
     let data = await response.json()
     console.log(data);
     setTimeout(() => {
-        divrepresent(data);
-        listrepresent(data);
-        tablerepresent(data);
+        other(data)
     }, 2000)
 }
 
@@ -20,7 +18,8 @@ let ul = document.createElement("ul")
 
 function listrepresent(data) {
     let h3 = document.createElement("h3")
-    h3.innerHTML = "subject"
+    h3.innerHTML = "subjects"
+    let ul = document.createElement("ul")
 
     data.forEach(student => {
         let li = document.createElement("li")
@@ -28,10 +27,10 @@ function listrepresent(data) {
         li.innerHTML = `${student.subject}`
         ul.appendChild(li)
         document.body.appendChild(h3)
-        // document.getElementById('display')
+        document.body.appendChild(ul)
+
     })
 }
-document.body.appendChild(ul)
 
 function tablerepresent(data) {
     let table = document.createElement("table")
@@ -62,4 +61,6 @@ function tablerepresent(data) {
 
 }
 
-fetch_();
+fetch_(listrepresent);
+fetch_(divrepresent);
+fetch_(tablerepresent);
