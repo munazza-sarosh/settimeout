@@ -1,0 +1,44 @@
+[
+    {
+        "name":"Ali",
+        "fathername":"Muhammad Akhtar",
+        "age":"9",
+        "class":"3",
+        "subject":"maths"
+    },
+    {
+        "name":"Ayesha",
+        "fathername":"Syed Anas",
+        "age":"14",
+        "class":"7",
+        "subject":"computer science"
+    },
+    {
+        "name":"Maryam",
+        "fathername":"Yousaf Khan",
+        "age":"16",
+        "class":"10",
+        "subject":"biology"
+    },
+    {
+        "name":"Amna",
+        "fathername":"Fahad Mustafa",
+        "age":"11",
+        "class":"5",
+        "subject":"Science"
+    },
+    {
+        "name":"Zainab",
+        "fathername":"Fawad Khan",
+        "age":"12",
+        "class":"6",
+        "subject":"Urdu"
+    },
+    {
+        "name":"Zahra",
+        "fathername":"Syed Maaz",
+        "age":"10",
+        "class":"4",
+        "subject":"English"
+    }
+]
