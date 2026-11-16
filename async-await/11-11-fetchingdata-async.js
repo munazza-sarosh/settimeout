@@ -36,13 +36,11 @@ function tablerepresent(data) {
     let table = document.createElement("table")
     let tr = document.createElement("tr")
 
-    tr.innerHTML = `
-        <th>Name</th>
-        <th>Father Name</th>
-        <th>Class</th>
-        <th>subject</th>
-        <th>age</th>`
-
+    Object.keys(data[0]).forEach(heading => {
+        let th = document.createElement("th")
+        th.innerHTML = heading;
+        tr.appendChild(th)
+    })
     table.appendChild(tr)
 
     data.forEach(student => {
@@ -50,9 +48,9 @@ function tablerepresent(data) {
         row.innerHTML = `
             <td>${student.name}</td>
             <td>${student.fathername}</td>
+            <td>${student.age}</td>
             <td>${student.class}</td>
             <td>${student.subject}</td>
-            <td>${student.age}</td>
             `;
         table.appendChild(row);
 
